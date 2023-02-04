@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "Screen Focus",
+    "version": "1.0",
+    "description": "An extension that helps users avoid distractions while working by darkening everything on the screen except for the active tab.",
+    "permissions": [
+      "activeTab",
+      "declarativeContent",
+      "scripting"
+    ],
+    "background" : {
+        "service_worker" : "content.js"
+    },
+    "content_scripts" : [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "css" : [
+                "style.css"
+            ],
+            "js" : [
+                "popup.js"
+            ],
+            "html" : [
+                "popup.html"
+            ]
+        }
+    ],
+    "action": {
+      "default_title": "Screen Focus",
+      "default_popup": "popup.html"
+    }
+  }
+  
